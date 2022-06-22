@@ -1,12 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
     <title>Travel Tip</title>
 </head>
+
 <body>
-    <h1>h1</h1>
+
+    <div class="grid-container">
+
+        <header>
+            <div class="logo">LOGO</div>
+            <div class="search-bar">
+                <form action="">
+                    <input type="search" class="search-bar">
+                    <button class="search-btn">GO</button>
+                </form>
+            </div>
+            <div class="my-location">
+                <button class="my-location-btn">
+                    My Location
+                </button>
+            </div>
+        </header>
+        <main class="main">
+            <!-- curr-location-bar -->
+            <div class="curr-location-bar">
+                <div class="curr-location">
+                    <h3><strong>Location:</strong>Central Park, New York</h3>
+                </div>
+                <div class="copy-curr-location">
+                    <button class="copy-location-btn">
+                        Copy Location
+                    </button>
+                </div>
+            </div>
+            <!-- End curr-location-bar -->
+
+            <!-- map-holder -->
+            <div class="map-holder">
+                MAP
+            </div>
+            <!-- End map-holder -->
+
+
+            <!-- aside-Map-ifor-bar -->
+            <aside calss="map-info-bar">
+                <!-- locations-cards-container -->
+                <div class="locations-cards-container">
+                    <div class="locations-card">
+                        <div class="location-name">
+                            <strong>location name</strong>
+                            <small>location cord</small>
+                        </div>
+                        <button class="remove-location-card">Remove Location</button>
+                    </div>
+                </div>
+                <!-- locations-cards-container -->
+                <!-- weather-curr-location -->
+                <div class="weather-curr-location">
+                   <h2>Weather today</h2>
+                   <div class="weather-curr-img">
+                    img or animation of the curr weather 
+                   </div>
+                   <div class="curr-location-weather-info">
+                    <p class="curr-location-weather-info">curr-location-name</p>
+                   </div>
+                </div>
+                <!-- End weather-curr-location -->
+            </aside>
+            <!-- End aside-Map-ifor-bar -->
+
+
+
+        </main>
+
+    </div>
+    <script src="trip-tip.controller.js"></script>
 </body>
+
 </html>
