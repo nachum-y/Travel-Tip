@@ -1,0 +1,31 @@
+.site-content {
+    flex-direction: column;
+    height: 100%;
+    background-color: pink;
+}
+
+header {
+    height: 70px;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-auto-flow: row;
+    height: auto;
+}
+
+.curr-location-bar {
+    grid-column: 1/-1;
+    background-color: yellow;
+    height: 100px;
+}
+
+.map-holder {
+    height: 500px;
+    background-color: green;
+}
+
+.map-info-bar {
+    background-color: blue;
+}
