@@ -46,7 +46,6 @@ function renderPlaces(gPlaces) {
         <div class="locations-card">
         <div onclick="goToPlaceOnMap(${place.id})" class="location-name">
         <strong>${(place.name)}</strong>
-        <small>Coordinates: Latitude ${place.location.lat} |  Latitude ${place.location.lng} </small>
         </div>
         <button onclick="onRemoveLocationCard(${place.id})" class="remove-location-card">Remove Location</button>
         </div>
