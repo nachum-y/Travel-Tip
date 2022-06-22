@@ -90,7 +90,8 @@ function initMap(lat, lng) {
         map: gMap,
         title: 'Hello World!',
     })
-    google.maps.event.addListener(gMap, 'click', function (e) {
+    // var geocoder = new google.maps.Geocoder();
+    google.maps.event.addListener(gMap, 'click', e => {
         console.log(e)
         console.log(gMap)
         var latLng = {
@@ -122,9 +123,20 @@ function addPlace(place) {
     gPlaces.push(place)
     storageService.saveToStorage(MAP_KEY, gPlaces)
     tripTipController.renderPlaces(gPlaces)
+    console.log(place)
+    // console.log(getFromLocation(place))
+    removeMarker()
+    setMarker(place)
 }
 
+function setMarker(place) {
+    gMarker = new google.maps.Marker({
+        position: place,
+        map: gMap,
+        title: '',
+    })
 
+}
 
 function setUserLocation() {
     if (navigator.geolocation) {
@@ -149,6 +161,8 @@ function createPlace(name, location) {
         id: utills.makeId(),
         name,
         location,
+        lat: location.lat(),
+        lng: location.lng()
     }
 }
 
