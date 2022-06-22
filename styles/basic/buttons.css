@@ -1,12 +1,19 @@
-header .btn{
+header .btn {
     border: 0.5px solid var(--header-border);
     color: var(--header-text);
     background-color: #323232;
     border-radius: 0.2em;
     height: 37px;
+    cursor: pointer;
+
+    transition: background-color .5s;
 }
 
-.remove-location-card{
+header .btn:hover {
+    background-color: var(--header-text);
+}
+
+.remove-location-card {
     border: none;
     cursor: pointer;
     color: var(--header-text);
@@ -15,8 +22,28 @@ header .btn{
     align-self: flex-end;
 }
 
-.remove-location-card img{
+.remove-location-card svg {
     height: 2em;
     line-height: 2em;
-    
+
+}
+
+.remove-location-card path:hover {
+    fill: var(--logo-primary)
+}
+
+.copy-location-btn {
+    color: white;
+    border: 0.5px solid hwb(0deg 0% 0% / 50%);
+    background-color: hwb(0deg 0% 0% / 50%);
+    cursor: pointer;
+    border-radius: 0.2em;
+    height: 37px;
+    opacity: 0.5;
+    transition: background-color .5s;
+}
+
+.copy-location-btn:hover {
+    background-color: hwb(0deg 0% 0% / 100%);
+    color: white;
 }

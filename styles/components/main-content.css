@@ -1,3 +1,21 @@
+.curr-location{
+    width: 59%;
+    color: var(--header-text);
+    border: 0.5px solid var(--header-border);
+    height: 37px;
+    border-radius: 0.2em;
+}
+.curr-location h3{
+    margin-block-end: 0;
+    margin-block-start: 0;
+    margin-inline-start: 1em;
+    line-height: 37px;
+    vertical-align: center;
+}
+.copy-curr-location{
+    margin-inline-end: 1em;
+}
+
 .locations-card{
     width: 97%;
     background-color: var(--header);
@@ -33,4 +51,17 @@
     width: 100%;
     border-radius: 50%;
     object-fit: cover;
+}
+
+.whather-card{
+    margin: 1em;
+    background-color: hwb(0deg 0% 0% / 50%);
+    padding: 1em;
+    border-radius: 0.5em;
+    transition: background-color .5s;
+}
+
+.whather-card:hover{
+    background-color: hwb(0deg 0% 0% / 100%);
+ 
 }

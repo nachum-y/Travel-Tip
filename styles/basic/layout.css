@@ -16,15 +16,15 @@ header {
 .main {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 100px 1fr;
+    grid-template-rows: 80px 1fr;
     height: 100%;
 }
 
 .curr-location-bar {
     grid-column: 1/-1;
-    height: 100px;
+    height: 80px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
 
 }
 
