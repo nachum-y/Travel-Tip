@@ -1,31 +1,59 @@
 .site-content {
     flex-direction: column;
-    height: 100%;
     background-color: pink;
+    height: 100vh;
 }
 
 header {
-    height: 70px;
+    display: flex;
+    min-height: 70px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .main {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-auto-flow: row;
-    height: auto;
+    grid-template-rows: 100px 1fr;
+    height: 100%;
 }
 
 .curr-location-bar {
     grid-column: 1/-1;
     background-color: yellow;
     height: 100px;
+    align-items: center;
+    justify-content: space-between;
+
 }
 
 .map-holder {
-    height: 500px;
     background-color: green;
 }
 
 .map-info-bar {
     background-color: blue;
+    flex-direction: column;
+}
+
+.locations-cards-container{
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding: 0.5em;
+    max-height: 60vh;
+    overflow-y: scroll;
+}
+
+.weather-curr-location{
+    background-color: aquamarine;
+    flex-grow: 2;
+
+}
+
+.locations-card{
+    background-color: blanchedalmond;
+    padding: 0.5em;
+    border-radius: 0.5em;
 }
