@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
     <title>Travel Tip</title>
+
+
 </head>
 
 <body>
@@ -199,7 +201,16 @@
         </main>
 
     </div>
+    <script type='text/javascript' src='config.js'></script>
     <script type="module" src="./js/trip-tip.controller.js"></script>
+    <script src="./lib/axios.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnekuAC6yqMxLABI5HI0JB5rN-PtL966g&callback=mapReady"></script>
+    <script>
+        function mapReady() {
+            console.log('Map is ready')
+        }
+    </script>
 
 </body>
 
