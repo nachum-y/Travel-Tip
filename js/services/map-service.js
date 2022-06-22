@@ -1,13 +1,22 @@
 export const mapService = {
     initMap,
-    setMap
+    setMap,
+    logChange
 }
 
 function setMap() {
-
-    
     getPosition()
 
+
+}
+
+var options = {
+    types: ['(cities)']
+}
+var input = document.getElementById('searchTextField')
+var autocomplete = new google.maps.places.Autocomplete(input, options)
+function logChange(){
+  initMap(autocomplete.gm_accessors_.place.hk.place.geometry.location.lat(),autocomplete.gm_accessors_.place.hk.place.geometry.location.lng())
 
 }
 
@@ -65,7 +74,6 @@ function initMap(lat, lng) {
         center: { lat, lng },
         zoom: 11,
     }
-    console.log(options);
 
     var map = new google.maps.Map(elMap, options)
 
@@ -75,12 +83,13 @@ function initMap(lat, lng) {
         title: 'Hello World!',
     })
     google.maps.event.addListener(map, 'click', function (e) {
+        console.log(e)
+        console.log(map)
         var latLng = {
             lat: e.latLng.lat(),
             lng: e.latLng.lng(),
         }
-        // document.querySelector('.lat-location').innerText = latLng.lat
-        // document.querySelector('.lng-location').innerText = latLng.lng
+        initMap(latLng.lat, latLng.lng)
     })
 }
 
@@ -97,9 +106,7 @@ function initMap(lat, lng) {
 //   renderLocation()
 // }
 
-// function onSubmit(ev) {
-//   ev.preventDefault()
-// }
+
 
 // function onTypeInput(input) {
 //   var elSaveLocationBtn = document.querySelector('.save-location-btn')

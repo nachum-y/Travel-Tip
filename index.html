@@ -18,9 +18,9 @@
         <header>
             <div class="logo">LOGO</div>
             <div class="search-bar">
-                <form action="">
-                    <input type="search" class="search-bar-input">
-                    <button class="search-btn btn">GO</button>
+                <form onsubmit="onSearchLoactionSubmit(event,this)" action="">
+                    <input type="search" id="searchTextField" class="search-bar-input" value="">
+                    <button class="search-btn">GO</button>
                 </form>
             </div>
             <div class="my-location">
@@ -175,7 +175,7 @@
                         </div>
                         <button class="remove-location-card">Remove Location</button>
                     </div>
-                    
+
                 </div>
                 <!-- locations-cards-container -->
                 <!-- weather-curr-location -->
@@ -201,11 +201,15 @@
         </main>
 
     </div>
+
     <script type='text/javascript' src='config.js'></script>
     <script type="module" src="./js/trip-tip.controller.js"></script>
     <script src="./lib/axios.js"></script>
+    <!-- <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnekuAC6yqMxLABI5HI0JB5rN-PtL966g&libraries=places&callback=initMap">
+        </script> -->
     <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnekuAC6yqMxLABI5HI0JB5rN-PtL966g&callback=mapReady"></script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnekuAC6yqMxLABI5HI0JB5rN-PtL966g&libraries=places&callback=mapReady"></script>
     <script>
         function mapReady() {
             console.log('Map is ready')
