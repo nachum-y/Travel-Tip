@@ -1,11 +1,22 @@
 export const mapService = {
     initMap,
-    setMap
+    setMap,
+    logChange
 }
 
 function setMap() {
     getPosition()
 
+
+}
+
+var options = {
+    types: ['(cities)']
+}
+var input = document.getElementById('searchTextField')
+var autocomplete = new google.maps.places.Autocomplete(input, options)
+function logChange(){
+  initMap(autocomplete.gm_accessors_.place.hk.place.geometry.location.lat(),autocomplete.gm_accessors_.place.hk.place.geometry.location.lng())
 
 }
 
@@ -72,7 +83,8 @@ function initMap(lat, lng) {
         title: 'Hello World!',
     })
     google.maps.event.addListener(map, 'click', function (e) {
-        console.log(e);
+        console.log(e)
+        console.log(map)
         var latLng = {
             lat: e.latLng.lat(),
             lng: e.latLng.lng(),
