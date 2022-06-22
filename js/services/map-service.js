@@ -4,8 +4,6 @@ export const mapService = {
 }
 
 function setMap() {
-
-    
     getPosition()
 
 
@@ -65,7 +63,6 @@ function initMap(lat, lng) {
         center: { lat, lng },
         zoom: 11,
     }
-    console.log(options);
 
     var map = new google.maps.Map(elMap, options)
 
@@ -75,12 +72,12 @@ function initMap(lat, lng) {
         title: 'Hello World!',
     })
     google.maps.event.addListener(map, 'click', function (e) {
+        console.log(e);
         var latLng = {
             lat: e.latLng.lat(),
             lng: e.latLng.lng(),
         }
-        // document.querySelector('.lat-location').innerText = latLng.lat
-        // document.querySelector('.lng-location').innerText = latLng.lng
+        initMap(latLng.lat, latLng.lng)
     })
 }
 
@@ -97,9 +94,7 @@ function initMap(lat, lng) {
 //   renderLocation()
 // }
 
-// function onSubmit(ev) {
-//   ev.preventDefault()
-// }
+
 
 // function onTypeInput(input) {
 //   var elSaveLocationBtn = document.querySelector('.save-location-btn')
