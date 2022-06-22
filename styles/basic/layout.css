@@ -1,14 +1,16 @@
 .site-content {
     flex-direction: column;
-    background-color: pink;
+    background-color: var(--body);
     height: 100vh;
 }
 
 header {
     display: flex;
     min-height: 70px;
+    background-color: var(--header);
     align-items: center;
     justify-content: space-between;
+    color: var(--header-text);
 }
 
 .main {
@@ -20,25 +22,21 @@ header {
 
 .curr-location-bar {
     grid-column: 1/-1;
-    background-color: yellow;
     height: 100px;
     align-items: center;
     justify-content: space-between;
 
 }
 
-.map-holder {
-    background-color: green;
-}
 
 .map-info-bar {
-    background-color: blue;
     flex-direction: column;
 }
 
 .locations-cards-container{
-    background-color: azure;
+    background-color: var(--cards-holder);
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 0.5em;
     padding: 0.5em;
@@ -47,13 +45,12 @@ header {
 }
 
 .weather-curr-location{
-    background-color: aquamarine;
     flex-grow: 2;
-
 }
 
 .locations-card{
-    background-color: blanchedalmond;
+    width: 97%;
+    background-color: var(--header);
     padding: 0.5em;
     border-radius: 0.5em;
 }

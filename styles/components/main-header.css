@@ -1,0 +1,30 @@
+
+.search-bar{
+    flex-grow: 2;
+    align-self: center;
+    margin-inline-start: 1em;
+    margin-inline-end: 1em;
+}
+
+.search-bar-input{
+   width: 60%;
+   color: var(--header-text);
+   background-color: var(--header);
+   border: 0.5px solid var(--header-border);
+   height: 37px;
+   border-radius: 0.2em;
+}
+
+.logo{
+    margin-inline-start: 1em;
+    margin-inline-end: 1em;
+}
+
+.search-btn{
+    margin-inline-start:-5px ;
+}
+
+.my-location-btn{
+    margin-inline-start: 1em;
+    margin-inline-end: 1em;
+}
