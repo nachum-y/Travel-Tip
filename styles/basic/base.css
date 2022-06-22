@@ -6,8 +6,10 @@ body {
     padding: 0;
     margin: 0;
     height: 100vh;
+    max-height: 100Vh;
     width: 100vw;
     overflow-x: hidden;
+    overflow-y: hidden;
     font-family: 'Roboto', sans-serif;
     color: white;
 }

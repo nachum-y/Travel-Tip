@@ -30,25 +30,29 @@ header {
 
 
 .map-info-bar {
+    display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    max-height: 100vh;
 }
 
-.locations-cards-container{
+.locations-cards-container {
     background-color: var(--cards-holder);
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 0.5em;
     padding: 0.5em;
-    max-height: 60vh;
+    height: 100%;
+    max-height: calc(100%-500px);
     overflow-y: scroll;
 }
 
-.weather-curr-location{
-    flex-grow: 2;
+.weather-curr-location {
+    height: 800px;
 }
 
-.locations-card{
+.locations-card {
     width: 97%;
     background-color: var(--header);
     padding: 0.5em;
