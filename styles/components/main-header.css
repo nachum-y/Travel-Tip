@@ -16,10 +16,20 @@
 }
 
 .logo{
+    text-transform: uppercase;
+    font-size: 1.7rem;
     margin-inline-start: 1em;
     margin-inline-end: 1em;
 }
 
+.logo span{
+    color: white;
+}
+
+.logo img{
+    height: 1.5rem;
+    width: 1.5rem;
+}
 .search-btn{
     margin-inline-start:-5px ;
 }

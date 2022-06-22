@@ -1,0 +1,36 @@
+.locations-card{
+    width: 97%;
+    background-color: var(--header);
+    padding: 0.5em;
+    border-radius: 0.5em;
+    display: flex;
+    justify-content: space-between
+}
+
+.location-details{
+    display: flex;
+}
+
+.location-name{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-inline-start: 1em;
+}
+
+.location-name strong{
+    text-transform: uppercase;
+}
+
+.img-holder{
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+}
+
+.img-holder img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}

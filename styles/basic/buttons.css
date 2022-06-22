@@ -5,3 +5,18 @@ header .btn{
     border-radius: 0.2em;
     height: 37px;
 }
+
+.remove-location-card{
+    border: none;
+    cursor: pointer;
+    color: var(--header-text);
+    height: 37px;
+    background-color: var(--header);
+    align-self: flex-end;
+}
+
+.remove-location-card img{
+    height: 2em;
+    line-height: 2em;
+    
+}
