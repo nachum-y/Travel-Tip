@@ -1,6 +1,7 @@
 import { mapService } from './services/map-service.js'
 export const tripTipController = {
-    renderPlaces
+    renderPlaces,
+    renderWeather
 }
 
 window.onSearchLoactionSubmit = onSearchLoactionSubmit
@@ -61,6 +62,13 @@ function onShowPlaceById(id) {
     mapService.showPlaceById(id)
 }
 
+function renderWeather(weatherInfo) {
+    console.log(weatherInfo);
+    document.querySelector('.whather-card').innerHTML = 
+    `<h2>${weatherInfo.city}, ${weatherInfo.country}</h2>
+    <div class="weather-curr-img"></div>
+    <p class="curr-location-weather-info">${weatherInfo.weather.toUpperCase()}: ${weatherInfo.temp.temp} &#8451;, feels Like: ${weatherInfo.temp.feels_like} &#8451;</p>`
+}
 
 
 

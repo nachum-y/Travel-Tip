@@ -2,13 +2,14 @@ export const mapService = {
     initMap,
     setMap,
     logChange,
-    getPlaces
+    getPlaces,
+    getWeatherForcast
 }
 import { storageService } from '/js/services/storage.service.js'
 import { utills } from '/js/utills.js'
 import { tripTipController } from '/js/trip-tip.controller.js'
 const MAP_KEY = 'placesDB'
-
+const W_KEY = 'b81739f6c51c127025b714ee9df6952a'
 var gMarker
 let gMap
 let gPlaces = storageService.loadFromStorage(MAP_KEY) ? storageService.loadFromStorage(MAP_KEY) : []
@@ -33,7 +34,7 @@ function logChange() {
     console.log(place)
     console.log(place.photos[0].getUrl())
     showPlaceBySearch(place.geometry.location)
-
+    
 
 }
 
@@ -51,6 +52,7 @@ function getPosition() {
 function showLocation(position) {
     console.log(position)
     initMap(position.coords.latitude, position.coords.longitude)
+    getWeatherForcast(position.coords.latitude,position.coords.longitude).then(tripTipController.renderWeather)
 }
 
 function handleLocationError(error) {
@@ -82,7 +84,6 @@ function initMap(lat, lng) {
         center: { lat, lng },
         zoom: 12
     }
-
     gMap = new google.maps.Map(elMap, options)
 
     gMarker = new google.maps.Marker({
@@ -99,6 +100,8 @@ function initMap(lat, lng) {
             lng: e.latLng.lng(),
         }
         saveLocation(e.latLng)
+        getWeatherForcast(latLng.lat,latLng.lng).then(tripTipController.renderWeather)
+
 
     })
 }
@@ -111,8 +114,6 @@ function goToLocationOnMap(lat, lng, zoom) {
         zoom: 12
     }
 }
-
-
 
 
 function getPlaces() {
@@ -203,9 +204,6 @@ function showPlaceBySearch(place) {
 }
 
 
-
-
-
 function saveLocation(location) {
 
     let placeName = prompt('enter a name for this location')
@@ -215,3 +213,17 @@ function saveLocation(location) {
     addPlace(place)
 
 }
+
+  
+  function getWeatherForcast(lat,lon) {
+    return axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${W_KEY}&units=metric`)
+      .then(res => {
+          console.log(res.data);
+          return {city: res.data.name,
+          country: res.data.sys.country,
+          temp: {temp: res.data.main.temp, feels_like: res.data.main.feels_like},
+          weather: res.data.weather[0].description,}
+
+      })
+  }
+  
